@@ -1,1 +1,12 @@
 <h1>Mr Estate Sales Showing, Products and More.</h1>
+
+
+
+<% @estates.each do |estate| %>
+  <div>
+    <h1><%= estate.name %></h1><br />
+    <i><%= estate.address %></i><br />
+  </div>
+
+  <hr />
+<% end %>
