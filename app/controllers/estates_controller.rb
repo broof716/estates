@@ -4,4 +4,8 @@ class EstatesController < ApplicationController
     @estates = Estate.all
   end
 
+ def new
+  @estate = Estate.new
+ end
+
 end
