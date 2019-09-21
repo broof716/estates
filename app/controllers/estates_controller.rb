@@ -1,5 +1,6 @@
 class EstatesController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @estates = Estate.all
   end
@@ -9,7 +10,7 @@ class EstatesController < ApplicationController
  end
 
   def create
-    Estate.create(estate_params)
+    current_user.esates.create(estate_params)
     redirect_to root_path
   end
 
