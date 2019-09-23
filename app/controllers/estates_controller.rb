@@ -1,5 +1,5 @@
 class EstatesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @estates = Estate.all
@@ -31,13 +31,17 @@ class EstatesController < ApplicationController
     if @estate.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
-    
+
     @estate.update_attributes(estate_params)
     redirect_to root_path
   end
 
   def destroy
     @estate - Estate.find(params[:id])
+    if @estate.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
+    
     @estate.destroy
     redirect_to root_path
   end
