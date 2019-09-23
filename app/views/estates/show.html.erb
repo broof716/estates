@@ -2,6 +2,42 @@
   <h1><%= @estate.name %></h1>
   <i><%= @estate.address %></i>
   <br/><br/>
+
+   <style>
+
+  </style>
+  </head>
+  <body>
+  <div id="map"></div>
+
+  <% if @estate.latitude.present? && @estate.longitude.present? %>
+
+  <script>
+
+    function initMap() {
+      var myLatLng = {lat: <%= @estate.latitude %>, lng: <%= @estate.longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+
+  <div id="map"></div>
+  <% end %>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYY39IXLjGF8vT-Fho4tUO2kAGJtJ_Fy0&callback=initMap">
+  </script>
+
+
   <div class="float-right">
     <% if current_user && current_user == @estate.user %>
       <%= link_to 'Edit', edit_estate_path(@estate), class: 'btn btn-primary' %>

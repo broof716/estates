@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-@import "bootstrap";
-
 .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
@@ -91,4 +89,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFEEEE;
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
+}
+
+#map {
+  height: 300px;
 }

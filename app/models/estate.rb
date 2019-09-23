@@ -1,6 +1,6 @@
 class Estate < ApplicationRecord
   belongs_to :user
-  goecoded_by :address
+  geocoded_by :address
   after_validation :geocode
 
   validates :address, presence: true
