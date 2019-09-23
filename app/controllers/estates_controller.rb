@@ -10,8 +10,12 @@ class EstatesController < ApplicationController
  end
 
   def create
-    current_user.esates.create(estate_params)
-    redirect_to root_path
+    @estate = current_user.esates.create(estate_params)
+    if @estate.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unproccessable_entity
+    end
   end
 
   def show
@@ -33,7 +37,11 @@ class EstatesController < ApplicationController
     end
 
     @estate.update_attributes(estate_params)
-    redirect_to root_path
+    if @estate.valid?
+      redirect_to root_path
+    else
+      render :edit, status: :unproccessable_entity
+    end
   end
 
   def destroy
@@ -41,7 +49,7 @@ class EstatesController < ApplicationController
     if @estate.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
-    
+
     @estate.destroy
     redirect_to root_path
   end
