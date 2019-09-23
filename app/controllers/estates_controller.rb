@@ -18,6 +18,10 @@ class EstatesController < ApplicationController
     @estate = Estate.find(params[:id])
   end
 
+  def edit
+    @estate = Estate.find(params[:id])
+  end
+
   private
 
   def estate_params

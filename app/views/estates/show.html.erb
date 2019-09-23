@@ -2,4 +2,7 @@
   <h1><%= @estate.name %></h1>
   <i><%= @estate.address %></i>
   <br/><br/>
+  <div class="float-right">
+    <%= link_to 'Edit', edit_estate_path(@estate), class: 'btn btn-primary' %>
+  </div>
 </div>
