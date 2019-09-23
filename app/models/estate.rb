@@ -1,4 +1,8 @@
 class Estate < ApplicationRecord
   belongs_to :user
-  validates :name, presence: true
+  goecoded_by :address
+  after_validation :geocode
+
+  validates :address, presence: true
+  validates :name, length: { minimum: 3}
 end
