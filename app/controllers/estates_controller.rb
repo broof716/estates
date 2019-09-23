@@ -22,6 +22,12 @@ class EstatesController < ApplicationController
     @estate = Estate.find(params[:id])
   end
 
+  def update
+    @estate = Estate.find(params[:id])
+    @estate.update_attributes(estate_params)
+    redirect_to root_path
+  end
+
   private
 
   def estate_params
