@@ -45,7 +45,7 @@ class EstatesController < ApplicationController
   end
 
   def destroy
-    @estate - Estate.find(params[:id])
+    @estate = Estate.find(params[:id])
     if @estate.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
