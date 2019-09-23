@@ -28,6 +28,12 @@ class EstatesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @estate - Estate.find(params[:id])
+    @estate.destroy
+    redirect_to root_path
+  end
+
   private
 
   def estate_params
