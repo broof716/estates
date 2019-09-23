@@ -14,6 +14,10 @@ class EstatesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @estate = Estate.find(params[:id])
+  end
+
   private
 
   def estate_params

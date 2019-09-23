@@ -13,6 +13,7 @@
 
 <% @estates.each do |estate| %>
   <div class="booyah-box h3 col-10 offset-1">
+    <h1><%= link_to estate.name, estate_path(estate) %></h1><br />
     <h3><%= estate.name %></h3><br />
     <i><%= estate.address %></i><br />
 
