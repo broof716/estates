@@ -11,7 +11,7 @@
 
   <body>
     <div id="flex-content-container">
-    <nav class="navbar navbar-toggleable-md navbar-light" style="background-color: #6E4A56">
+      <nav class="navbar navbar-toggleable-md navbar-light"style="background-color: #6E4A56">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,14 +19,14 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to 'Find Sales', new_estate_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Shop</a>
+            <a class="nav-link" href="#">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Customer Reviews</a>
+            <a class="nav-link" href="#">Customer Reviews</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -40,7 +40,6 @@
             </li>
           <% end %>
         </ul>
-        </form>
       </div>
     </nav>
 
@@ -52,9 +51,8 @@
     <% end %>
 
     <%= yield %>
-  </div>
-
-  <br/><br/>
+  </body>
+</html>
 
   <div id="footer">
     <div class="container">
@@ -65,3 +63,5 @@
   </div> 
   </body>
 </html>
+
+

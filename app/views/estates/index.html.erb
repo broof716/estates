@@ -1,4 +1,14 @@
-<h1>Mr Estate Sales Showing, Products and More.</h1>
+<div class="hero">
+  <br />
+  <div class="frosty col-10 offset-1 text-center">
+    <br />
+    <h1>Mr Estate Sales Showing, Products and More.</h1>
+    <br />
+    <%= link_to 'Find Sales', new_estate_path, class: 'btn btn-success' %>
+    <%= link_to 'Online Marketplace', '#', class: 'btn btn-success' %>
+    <br /><br />
+ </div>
+</div>
 
 <br />
 <div class="row feature text-center">
@@ -13,12 +23,9 @@
 
 <% @estates.each do |estate| %>
   <div class="booyah-box h3 col-10 offset-1">
-    <h1><%= link_to estate.name, estate_path(estate) %></h1><br />
-    <h3><%= estate.name %></h3><br />
+    <h3><%= link_to estate.name, estate_path(estate) %></h3><br />
     <i><%= estate.address %></i><br />
 
-    <% if estate.user.present? %>
-      <small><%= estate.user.email %></small>
-    <% end %>
+
   </div>
 <% end %>
