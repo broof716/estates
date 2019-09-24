@@ -3,16 +3,11 @@
   <i><%= @estate.address %></i>
   <br/><br/>
 
-
-
   <style>
-
+   
   </style>
-  </head>
-  <body>
-  <div id="map"></div>
 
-<% if @estate.latitude.present? && @estate.longitude.present? %>
+  <% if @estate.latitude.present? && @estate.longitude.present? %>
 
   <script>
 
@@ -27,14 +22,13 @@
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Estate Sale Location'
+        title: 'Estate Sales Location'
       });
     }
-
   </script>
+
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp2uAF-DsxL42L4Wz7hoZwpyZWz6PP-AU&
-  callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATgVcKdDsOa_xicA1hsYfd3riC9M9TzqY&callback=initMap">
   </script>
 
   <div id="map"></div>
