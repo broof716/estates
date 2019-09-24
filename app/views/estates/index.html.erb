@@ -30,3 +30,10 @@
 
   </div>
 <% end %>
+
+<div class="clear"></div>
+<%= simple_form_for @comment, url: estate_comments_path(@estate) do |f| %>
+  <%= f.input :message %>
+  <%= f.input :rating %>
+  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+<% end %>
