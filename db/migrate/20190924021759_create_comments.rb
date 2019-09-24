@@ -4,10 +4,10 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.text :message
       t.string :rating
       t.integer :user_id
-      t.integer :estate_id
+      t.integer :review_id
       t.timestamps
     end
 
-    add_index :comments, [:user_id, :estate_id]
+    add_index :comments, [:user_id, :review_id]
   end
 end

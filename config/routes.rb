@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :reviews, only: [:show]
   root 'estates#index'
   resources :estates do
     resources :comments, only: :create
